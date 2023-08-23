@@ -11,3 +11,7 @@ This is a project for 8th Light devs to practice React, learn new tools, and hav
 - React Testing Library
 - Tailwind CSS
 - Elixir
+
+## Versions
+- Elixir 1.14.4
+- Erlang 25.3.1
