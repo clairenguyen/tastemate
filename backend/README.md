@@ -2,6 +2,8 @@
 
 ## Setup
 
+This assumes you already have the Elixir and Erlang versions located in `../.tool-versions` installed as well as PostgreSQL running
+
 Install the dependencies:
 
 ```

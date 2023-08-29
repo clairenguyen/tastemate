@@ -8,7 +8,7 @@ defmodule TastemateBackendWeb.Router do
   scope "/api", TastemateBackendWeb do
     pipe_through :api
 
-    get "/hello", HelloController, :index
+    get "/restaurants/all", RestaurantController, :all
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
