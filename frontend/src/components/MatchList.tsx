@@ -8,6 +8,16 @@ export default function MatchList() {
                     </h1>
                 </div>
             </div>
+            <div className="text-black">
+                <div className="p-5">
+                    <a className="pr-2">
+                        <b>Restaurants</b>
+                    </a>
+                    <a>
+                        <b>People</b>
+                    </a>
+                </div>
+            </div>
         </div>
     )
 }
