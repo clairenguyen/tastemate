@@ -18,6 +18,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Plop
+Plop is a generator which will create a skeleton of a new route or new component for you.
+
+To use Plop, from `frontend`:
+
+```bash
+# route
+plop route
+# Plop will ask you for a route path
+
+# component
+plop component
+# Plop will ask you for a component name
+```
+
 ## Running Tests
 
 To run the tests:
