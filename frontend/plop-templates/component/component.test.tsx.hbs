@@ -1,0 +1,13 @@
+import { render, screen } from '@testing-library/react';
+import {{pascalCase name}} from '../../src/components/{{pascalCase name}}';
+import '@testing-library/jest-dom';
+
+describe({{pascalCase name}}, () => {
+  it('renders the component name', () => {
+    render(<{{pascalCase name}}/>);
+
+    const nameElem = screen.getByText('{{pascalCase name}}');
+
+    expect(nameElem).toBeInTheDocument();
+  })
+})
