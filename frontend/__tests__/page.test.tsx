@@ -1,12 +1,12 @@
-import {render,screen} from '@testing-library/react'
-import Home from "@/app/page";
+import { render, screen } from '@testing-library/react';
+import Home from '@/app/page';
 
 describe('Home', () => {
-    it('renders a heading', () => {
-        render(<Home/>)
+  it('renders a heading', () => {
+    render(<Home />);
 
-        const myElem = screen.getByText('Docs')
+    const myElem = screen.getByText('Docs');
 
-        expect(myElem).toBeInTheDocument()
-    })
-})
+    expect(myElem).toBeInTheDocument();
+  });
+});
