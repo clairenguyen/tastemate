@@ -25,11 +25,11 @@ To use Plop, from `frontend`:
 
 ```bash
 # route
-plop route
+npm run plop route
 # Plop will ask you for a route path
 
 # component
-plop component
+npm run plop component
 # Plop will ask you for a component name
 ```
 
