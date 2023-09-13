@@ -5,7 +5,7 @@ import CardScreen from "@/components/CardScreen";
 export default function Home() {
   return (
     <main >
-        <div className="d-inline-block">
+        <div className="flex">
             <MatchList/>
             <CardScreen/>
         </div>
