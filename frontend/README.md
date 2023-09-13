@@ -48,6 +48,6 @@ npm run lint
 To use prettier, you can run:
 
 ```bash
-npx prettier . --check  # to check what files are already formatted
-npx prettier . --write  # to overwrite them with the prettier format
+npm run prettier:check  # to check what files are already formatted
+npm run prettier:fix    # to overwrite them with the prettier format
 ```
