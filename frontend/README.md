@@ -26,11 +26,11 @@ To use Plop, from `frontend`:
 ```bash
 # route
 npm run plop route
-# Plop will ask you for a route path
+# Plop will ask you for a route path and will create a new folder inside of /src/app/
 
 # component
 npm run plop component
-# Plop will ask you for a component name
+# Plop will ask you for a component name and will create a new .tsx component inside of /src/components and /__tests__/components
 ```
 
 ## Running Tests
