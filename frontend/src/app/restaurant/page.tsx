@@ -1,16 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-interface Restaurant {
-  name: string
-  address: string
-  cuisine: string
-  rating: string
-  phone: string
-  image_url: string
-  website_url: string
-}
+import React, { useEffect, useState } from 'react'
+import { Restaurant } from '@/types'
 
 interface RestaurantProps {
   restaurant: Restaurant
