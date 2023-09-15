@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useEffect, useState } from 'react'
 
@@ -14,10 +14,6 @@ interface Restaurant {
 
 interface RestaurantProps {
   restaurant: Restaurant
-}
-
-interface GetRestaurantsResponse {
-  data: Restaurant[]
 }
 
 const RestaurantCard: React.FC<RestaurantProps> = ({ restaurant }) => {
@@ -41,9 +37,9 @@ const RestaurantPage: React.FC<RestaurantProps> = () => {
 
   useEffect(() => {
     fetch('http://localhost:4000/api/restaurants/all')
-    .then((res) => res.json())
-    .then((res) => setRestaurants(res.data))
-    .catch((err) => setError(err.message))
+      .then((res) => res.json())
+      .then((res) => setRestaurants(res.data))
+      .catch((err) => setError(err.message))
   }, [])
 
   if (error) return <p>{error}</p>
