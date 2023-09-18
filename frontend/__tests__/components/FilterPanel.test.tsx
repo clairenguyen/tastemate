@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import FilterPanel from '../../src/components/FilterPanel';
+import FilterButton from '@/components/FilterButton';
 import '@testing-library/jest-dom';
 
 describe(FilterPanel, () => {
-  it('renders the component name', () => {
+  it('renders a dietary restrictions FilterButton', () => {
     render(<FilterPanel/>);
 
-    const nameElem = screen.getByText('FilterPanel');
-
-    expect(nameElem).toBeInTheDocument();
+    expect(screen.getByText('Vegan')).toBeInTheDocument();
   })
 })
