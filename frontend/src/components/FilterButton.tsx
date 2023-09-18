@@ -1,7 +1,7 @@
-export default function FilterButton() {
+export default function FilterButton({ filterLabel }: { filterLabel: string }) {
   return (
     <>
-      FilterButton
+      <button id={filterLabel}>{filterLabel}</button>
     </>
   )
 }

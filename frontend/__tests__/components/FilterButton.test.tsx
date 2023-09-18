@@ -3,11 +3,9 @@ import FilterButton from '../../src/components/FilterButton';
 import '@testing-library/jest-dom';
 
 describe(FilterButton, () => {
-  it('renders the component name', () => {
-    render(<FilterButton/>);
+  it('renders a button with the expected label', () => {
+    render(<FilterButton filterLabel="Test Label"/>);
 
-    const nameElem = screen.getByText('FilterButton');
-
-    expect(nameElem).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveTextContent('Test Label');
   })
 })
