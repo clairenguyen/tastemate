@@ -1,25 +1,11 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import RestaurantCard from '@/components/RestaurantCard'
 import { Restaurant } from '@/types'
 
 interface RestaurantProps {
   restaurant: Restaurant
-}
-
-const RestaurantCard: React.FC<RestaurantProps> = ({ restaurant }) => {
-  return (
-    <>
-      <h1>{restaurant.name}</h1>
-      <div>{restaurant.address}</div>
-      <div>{restaurant.cuisine}</div>
-      <div>{restaurant.rating}</div>
-      <div>{restaurant.phone}</div>
-      <div>{restaurant.image_url}</div>
-      <div>{restaurant.website_url}</div>
-      <br />
-    </>
-  )
 }
 
 const RestaurantPage: React.FC<RestaurantProps> = () => {

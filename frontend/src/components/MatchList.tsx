@@ -1,5 +1,3 @@
-
-
 export default function MatchList() {
     return (
         <div className="float-left font-sans w-1/4 h-screen bg-white d-inline-block">
