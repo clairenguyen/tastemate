@@ -5,7 +5,9 @@ import RestaurantCard from '@/components/RestaurantCard'
 import { Restaurant } from '@/types'
 
 interface RestaurantProps {
-  restaurant: Restaurant
+  params : {
+    restaurant: Restaurant
+  }
 }
 
 const RestaurantPage: React.FC<RestaurantProps> = () => {
