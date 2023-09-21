@@ -1,4 +1,5 @@
 import type { Restaurant } from '@/types'
+import React from "react";
 
 interface IRestaurantCard {
   restaurant: Restaurant
@@ -27,15 +28,23 @@ export default function RestaurantCard({ onAcceptButtonClick, onDeclineButtonCli
   }
 
   return (
-    <div className="flex flex-col items-center justify-around border border-slate-950 h-2/3 w-2/5">
-      <h1>{name}</h1>
-      <p>{address}</p>
-      <p>{cuisine}</p>
-      <p>{rating}</p>
-      <p>{phone}</p>
-      <p>{image_url}</p>
-      <p>{website_url}</p>
-      {maybeRenderButtons()}
-    </div>
+      <div style={{display: "flex"}}>
+          <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow max-w-md flex-col items-center" style={{color: "black", display: "flex"}}>
+              <div className="px-4 py-5 sm:px-6">
+                  <h1>{name}</h1>
+              </div>
+              <div className="px-4 py-5 sm:p-6">
+                  <p>{website_url}</p>
+                  <p>{address}</p>
+                  <p>{phone}</p>
+                  <p>{cuisine}</p>
+                  <p>{rating}</p>
+                  <div className="h-48 w-96">
+                      <img className="object-cover h-48 w-72" src={image_url} />
+                  </div>
+                  {maybeRenderButtons()}
+              </div>
+          </div>
+      </div>
   )
 }

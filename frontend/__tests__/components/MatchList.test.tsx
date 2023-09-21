@@ -8,7 +8,6 @@ describe('MatchList', () => {
 
         expect(myElem).toBeInTheDocument()
     })
-})
 
     it('renders headers for "Like" lists ', () => {
         render(<MatchList/>)
