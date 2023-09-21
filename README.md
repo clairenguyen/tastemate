@@ -39,3 +39,24 @@ Verify you have the correct versions:
 elixir -v
 node -v
 ```
+
+## Setting up and starting the application
+
+For specific instructions on how to setup and run the Elixir backend or React frontend, see the READMEs in the respective `backend` and `frontend` directories.
+
+Alternatively, you can install and start your backend and frontend from the project root directory using a single command via the `concurrently` package.
+
+```shell
+npm install # installs all dependencies for backend, frontend, and `concurrently`
+npm start # starts both the backend and frontend servers
+npm test # runs both the backend and frontend tests
+
+npm run frontend:install
+npm run backend:install
+
+npm run frontend:start
+npm run backend:start
+
+npm run backend:test
+npm run frontend:test 
+```
