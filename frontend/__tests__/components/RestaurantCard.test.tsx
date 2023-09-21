@@ -18,12 +18,13 @@ describe('RestaurantCard', () => {
     render(<RestaurantCard restaurant={FAKE_RESTAURANT} />)
 
     expect(screen.getByText(FAKE_RESTAURANT.name)).toBeInTheDocument()
+    expect(screen.getByText(FAKE_RESTAURANT.website_url)).toBeInTheDocument()
     expect(screen.getByText(FAKE_RESTAURANT.address)).toBeInTheDocument()
     expect(screen.getByText(FAKE_RESTAURANT.cuisine)).toBeInTheDocument()
     expect(screen.getByText(FAKE_RESTAURANT.rating)).toBeInTheDocument()
     expect(screen.getByText(FAKE_RESTAURANT.phone)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.image_url)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.website_url)).toBeInTheDocument()
+    const image = document.querySelector("img") as HTMLImageElement
+    expect(image.src).toContain(FAKE_RESTAURANT.image_url)
   })
 
   test('renders buttons if provided button handlers', async () => {
