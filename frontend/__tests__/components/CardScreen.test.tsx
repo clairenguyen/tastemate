@@ -51,4 +51,12 @@ describe('CardScreen', () => {
 
     expect(screen.getByText(/failed to fetch/i)).toBeVisible()
   })
+
+  test('clicking on restaurant filter button opens filter options', async () => {
+    expect(screen.queryByText('Filters')).not.toBeInTheDocument()
+
+    await userEvent.click(screen.getByRole('button', { name: 'Filter Restaurants' }))
+
+    expect(screen.getByText('Filters')).toBeInTheDocument()
+  })
 })
