@@ -6,7 +6,11 @@ interface ICard {
   restaurant: Restaurant
 }
 
-export default function Card({ onAcceptButtonClick, onDeclineButtonClick, restaurant }: ICard) {
+export default function Card({
+  onAcceptButtonClick,
+  onDeclineButtonClick,
+  restaurant,
+}: ICard) {
   const { name } = restaurant
 
   return (
