@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Restaurant } from '@/types'
 import React from "react";
 
@@ -40,7 +41,7 @@ export default function RestaurantCard({ onAcceptButtonClick, onDeclineButtonCli
                   <p>{cuisine}</p>
                   <p>{rating}</p>
                   <div className="h-48 w-96">
-                      <img className="object-cover h-48 w-72" src={image_url} />
+                      <Image className="object-cover h-48 w-72" src={image_url} alt="hi" width={50} height={50} />
                   </div>
                   {maybeRenderButtons()}
               </div>
