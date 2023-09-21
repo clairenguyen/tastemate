@@ -17,10 +17,14 @@ describe('CardScreen', () => {
 
     await userEvent.click(screen.getByRole('button', { name: 'Accept' }))
 
-    expect(screen.getByText('Button status: accept button clicked')).toBeInTheDocument()
+    expect(
+      screen.getByText('Button status: accept button clicked'),
+    ).toBeInTheDocument()
 
     await userEvent.click(screen.getByRole('button', { name: 'Decline' }))
 
-    expect(screen.getByText('Button status: decline button clicked')).toBeInTheDocument()
+    expect(
+      screen.getByText('Button status: decline button clicked'),
+    ).toBeInTheDocument()
   })
 })
