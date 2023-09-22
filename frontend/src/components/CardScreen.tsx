@@ -17,7 +17,10 @@ export default function CardScreen() {
   if (error) return <p>{error}</p>
 
   return (
-    <div className="flex flex-col items-center justify-center position-relative float-right w-3/4 h-screen bg-slate-200 d-inline-block text-black">
+    <div
+      data-testid="card-screen"
+      className="flex flex-col items-center justify-center position-relative float-right w-3/4 h-screen bg-slate-200 d-inline-block text-black"
+    >
       <CardCarousel restaurants={restaurants} />
     </div>
   )
