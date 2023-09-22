@@ -1,15 +1,28 @@
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import Home from '@/app/page'
 
 describe('Home', () => {
-  // Skipping this test for now as it is failing due to:
-  // ReferenceError: fetch is not defined (in CardScreen)
-  // TODO: address in separate PR
-  it.skip('renders a heading', () => {
-    render(<Home />)
+  beforeEach(async () => {
+    window.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve({ data: [] }),
+    })
 
-    const myElem = screen.getByText('TasteMate')
+    await act(() => {
+      render(<Home />)
+    })
+  })
 
-    expect(myElem).toBeInTheDocument()
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
+
+  it('renders the match list', () => {
+    expect(screen.getByText(/tastemate/i)).toBeVisible()
+    expect(screen.getByText(/restaurants/i)).toBeVisible()
+    expect(screen.getByText(/people/i)).toBeVisible()
+  })
+
+  it('renders the card screen', () => {
+    expect(screen.getByTestId('card-screen')).toBeVisible()
   })
 })

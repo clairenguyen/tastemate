@@ -19,16 +19,14 @@ export default function CardCarousel({ restaurants = [] }: CardCarouselProps) {
 
   return (
     <div>
-      <>
-        <h1 style={{ background: 'white', color: 'black' }}>
-          Button status: {dummyStatus}
-        </h1>
-        <RestaurantCard
-          restaurant={restaurants[0]}
-          onAcceptButtonClick={() => handleButtonClick('accept')}
-          onDeclineButtonClick={() => handleButtonClick('decline')}
-        />
-      </>
+      <h1 style={{ background: 'white', color: 'black' }}>
+        Button status: {dummyStatus}
+      </h1>
+      <RestaurantCard
+        restaurant={restaurants[0]}
+        onAcceptButtonClick={() => handleButtonClick('accept')}
+        onDeclineButtonClick={() => handleButtonClick('decline')}
+      />
     </div>
   )
 }
