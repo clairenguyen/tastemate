@@ -1,17 +1,11 @@
 'use client'
-
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Restaurant } from '@/types'
-import RestaurantCard from '@/components/RestaurantCard'
+import CardCarousel from '@/components/CardCarousel'
 
-export const CardScreen = () => {
+export default function CardScreen() {
   const [error, setError] = useState()
-  const [restaurants, setRestaurants] = useState<Restaurant[]>()
-  const [dummyStatus, setDummyStatus] = useState<string>('none')
-
-  const handleButtonClick = (buttonType: string) => {
-    setDummyStatus(`${buttonType} button clicked`)
-  }
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
 
   useEffect(() => {
     fetch('http://localhost:4000/api/restaurants/all')
@@ -21,20 +15,10 @@ export const CardScreen = () => {
   }, [])
 
   if (error) return <p>{error}</p>
-  if (!restaurants) return <p>Loading...</p>
 
   return (
-    <div>
-      <>
-        <h1 style={{ background: 'white', color: 'black' }}>
-          Button status: {dummyStatus}
-        </h1>
-        <RestaurantCard
-          restaurant={restaurants[0]}
-          onAcceptButtonClick={() => handleButtonClick('accept')}
-          onDeclineButtonClick={() => handleButtonClick('decline')}
-        />
-      </>
+    <div className="flex flex-col items-center justify-center position-relative float-right w-3/4 h-screen bg-slate-200 d-inline-block text-black">
+      <CardCarousel restaurants={restaurants} />
     </div>
   )
 }

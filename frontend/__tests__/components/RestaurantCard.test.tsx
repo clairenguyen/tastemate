@@ -9,25 +9,31 @@ const FAKE_RESTAURANT = {
   cuisine: 'Fakish',
   rating: 4.5,
   phone: '2130001111',
-  image_url: 'www.dummyrestaurant.com/pic',
-  website_url: 'www.dummyrestaurant.com',
+  image_url: 'http://www.dummyrestaurant.com/pic',
+  website_url: 'http://www.dummyrestaurant.com',
 }
 
 describe('RestaurantCard', () => {
-  test('renders a card with restaurant details and buttons', () => {
+  test('displays a card with restaurant details', () => {
     render(<RestaurantCard restaurant={FAKE_RESTAURANT} />)
 
-    expect(screen.getByText(FAKE_RESTAURANT.name)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.website_url)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.address)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.cuisine)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.rating)).toBeInTheDocument()
-    expect(screen.getByText(FAKE_RESTAURANT.phone)).toBeInTheDocument()
-    const image = document.querySelector('img') as HTMLImageElement
-    expect(image.src).toContain(FAKE_RESTAURANT.image_url)
+    expect(screen.getByText(FAKE_RESTAURANT.name)).toBeVisible()
+    expect(screen.getByText(FAKE_RESTAURANT.website_url)).toBeVisible()
+    expect(screen.getByText(FAKE_RESTAURANT.address)).toBeVisible()
+    expect(screen.getByText(FAKE_RESTAURANT.cuisine)).toBeVisible()
+    expect(screen.getByText(FAKE_RESTAURANT.rating)).toBeVisible()
+    expect(screen.getByText(FAKE_RESTAURANT.phone)).toBeVisible()
+
+    const image = screen.getByRole('img', {
+      name: `Image of ${FAKE_RESTAURANT.name}`,
+    })
+    expect(image).toBeVisible()
+
+    const decodedSrc = decodeURIComponent(image.src)
+    expect(decodedSrc).toContain(FAKE_RESTAURANT.image_url)
   })
 
-  test('renders buttons if provided button handlers', async () => {
+  test('displays buttons if provided button handlers', async () => {
     render(
       <RestaurantCard
         restaurant={FAKE_RESTAURANT}
@@ -36,8 +42,8 @@ describe('RestaurantCard', () => {
       />,
     )
 
-    expect(screen.getByRole('button', { name: 'Accept' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Decline' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Accept' })).toBeVisible()
+    expect(screen.getByRole('button', { name: 'Decline' })).toBeVisible()
   })
 
   test('clicking on the buttons calls handlers', async () => {

@@ -46,7 +46,7 @@ export default function RestaurantCard({
             <Image
               className="object-cover h-48 w-72"
               src={image_url}
-              alt="hi"
+              alt={`Image of ${name}`}
               width={50}
               height={50}
             />
