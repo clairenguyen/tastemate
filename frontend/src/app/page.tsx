@@ -1,5 +1,5 @@
 import MatchList from '@/components/MatchList'
-import { CardScreen } from '@/components/CardScreen'
+import CardScreen from '@/components/CardScreen'
 
 export default function Home() {
   return (
