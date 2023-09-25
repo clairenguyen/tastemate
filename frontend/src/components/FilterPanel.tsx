@@ -35,27 +35,27 @@ const RATINGS = [
 
 export default function FilterPanel() {
   return (
-    <>
-      <div>
+    <div className="bg-white text-black">
+      <div className="flex flex-row flex-wrap">
         {DIETARY_RESTRICTIONS.map((restriction) => (
           <FilterButton key={restriction} filterLabel={restriction}/>
         ))}
       </div>
-      <div>
+      <div className="flex flex-row flex-wrap">
         {CUISINES.map((cuisine) => (
           <FilterButton key={cuisine} filterLabel={cuisine}/>
         ))}
       </div>
-      <div>
+      <div className="flex flex-row flex-wrap">
         {BUDGETS.map((budget) => (
           <FilterButton key={budget} filterLabel={budget}/>
         ))}
       </div>
-      <div>
+      <div className="flex flex-row flex-wrap">
         {RATINGS.map((rating) => (
           <FilterButton key={rating} filterLabel={rating}/>
         ))}
       </div>
-    </>
+    </div>
   )
 }
