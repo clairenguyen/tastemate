@@ -44,4 +44,52 @@ describe(FilterPanel, () => {
     }
     )
   })
+
+  it('renders a FilterButton for each budget', () => {
+    const BUDGETS = [
+      "$",
+      "$$",
+      "$$$",
+      "$$$$",
+    ]
+
+    render(<FilterPanel/>);
+
+    BUDGETS.forEach((budget) => {
+      expect(screen.getByText(budget)).toBeInTheDocument();
+    }
+    )
+  })
+
+  it('renders a FilterButton for each budget', () => {
+    const BUDGETS = [
+      "$",
+      "$$",
+      "$$$",
+      "$$$$",
+    ]
+
+    render(<FilterPanel/>);
+
+    BUDGETS.forEach((budget) => {
+      expect(screen.getByText(budget)).toBeInTheDocument();
+    }
+    )
+  })
+
+  it('renders a FilterButton for each rating', () => {
+    const RATINGS = [
+      "2+",
+      "3+",
+      "4+",
+      "5+",
+    ]
+
+    render(<FilterPanel/>);
+
+    RATINGS.forEach((rating) => {
+      expect(screen.getByText(rating)).toBeInTheDocument();
+    }
+    )
+  });
 })

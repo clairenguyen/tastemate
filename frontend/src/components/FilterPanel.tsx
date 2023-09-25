@@ -19,6 +19,20 @@ const CUISINES = [
   "Sushi",
 ]
 
+const BUDGETS = [
+  "$",
+  "$$",
+  "$$$",
+  "$$$$",
+]
+
+const RATINGS = [
+  "2+",
+  "3+",
+  "4+",
+  "5+",
+]
+
 export default function FilterPanel() {
   return (
     <>
@@ -30,6 +44,16 @@ export default function FilterPanel() {
       <div>
         {CUISINES.map((cuisine) => (
           <FilterButton key={cuisine} filterLabel={cuisine}/>
+        ))}
+      </div>
+      <div>
+        {BUDGETS.map((budget) => (
+          <FilterButton key={budget} filterLabel={budget}/>
+        ))}
+      </div>
+      <div>
+        {RATINGS.map((rating) => (
+          <FilterButton key={rating} filterLabel={rating}/>
         ))}
       </div>
     </>
