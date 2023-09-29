@@ -45,7 +45,8 @@ defmodule TastemateBackend.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:corsica, "~> 2.0"}
+      {:corsica, "~> 2.0"},
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 
