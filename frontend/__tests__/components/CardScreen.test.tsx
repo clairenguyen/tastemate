@@ -1,5 +1,6 @@
 import { act, render, screen } from '@testing-library/react'
 import CardScreen from '@/components/CardScreen'
+import userEvent from '@testing-library/user-event'
 
 describe('CardScreen', () => {
   afterEach(() => {
@@ -53,10 +54,17 @@ describe('CardScreen', () => {
   })
 
   test('clicking on restaurant filter button opens filter options', async () => {
+    window.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve({ data: [] }),
+    })
+
+    await act(() => {
+      render(<CardScreen />)
+    })
+
     expect(screen.queryByText('Filters')).not.toBeInTheDocument()
-
-    await userEvent.click(screen.getByRole('button', { name: 'Filter Restaurants' }))
-
+    
+    await userEvent.click(screen.getByRole('button', { name: 'Filter' }))
     expect(screen.getByText('Filters')).toBeInTheDocument()
   })
 })
