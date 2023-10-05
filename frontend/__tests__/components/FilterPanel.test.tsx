@@ -3,10 +3,9 @@ import FilterPanel from '../../src/components/FilterPanel'
 import '@testing-library/jest-dom'
 
 describe(FilterPanel, () => {
-  it('renders a dietary restrictions FilterButton', () => {
+  it('renders a preferences header', () => {
     render(<FilterPanel />)
-
-    expect(screen.getByText('Vegan')).toBeInTheDocument()
+    expect(screen.getByText('Your Preferences')).toBeInTheDocument()
   })
 
   it('renders a FilterButton for each dietary restriction', () => {
@@ -19,6 +18,7 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
+    expect(screen.getByText('Dietary Restrictions')).toBeInTheDocument()
     DIETARY_RESTRICTIONS.forEach((restriction) => {
       expect(screen.getByText(restriction)).toBeInTheDocument()
     })
@@ -39,6 +39,7 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
+    expect(screen.getByText('Cuisines')).toBeInTheDocument()
     CUISINES.forEach((cuisine) => {
       expect(screen.getByText(cuisine)).toBeInTheDocument()
     })
@@ -49,16 +50,7 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
-    BUDGETS.forEach((budget) => {
-      expect(screen.getByText(budget)).toBeInTheDocument()
-    })
-  })
-
-  it('renders a FilterButton for each budget', () => {
-    const BUDGETS = ['$', '$$', '$$$', '$$$$']
-
-    render(<FilterPanel />)
-
+    expect(screen.getByText('Budget')).toBeInTheDocument()
     BUDGETS.forEach((budget) => {
       expect(screen.getByText(budget)).toBeInTheDocument()
     })
@@ -69,6 +61,7 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
+    expect(screen.getByText('Ratings')).toBeInTheDocument()
     RATINGS.forEach((rating) => {
       expect(screen.getByText(rating)).toBeInTheDocument()
     })
