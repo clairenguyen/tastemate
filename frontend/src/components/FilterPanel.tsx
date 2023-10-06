@@ -38,6 +38,7 @@ export default function FilterPanel() {
       >
         Submit
       </button>
+      <button className="text-blue-600 text-center w-full">Reset</button>
     </div>
   )
 }

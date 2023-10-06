@@ -71,4 +71,9 @@ describe(FilterPanel, () => {
     render(<FilterPanel />)
     expect(screen.getByText('Submit')).toBeInTheDocument()
   })
+
+  it('renders a reset button', () => {
+    render(<FilterPanel />)
+    expect(screen.getByText('Reset')).toBeInTheDocument()
+  })
 })
