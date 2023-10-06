@@ -32,6 +32,12 @@ export default function FilterPanel() {
           options={filter[1] as string[]}
         />
       ))}
+      <button
+        type="submit"
+        className="bg-blue-600 text-white rounded-full p-2 w-full"
+      >
+        Submit
+      </button>
     </div>
   )
 }

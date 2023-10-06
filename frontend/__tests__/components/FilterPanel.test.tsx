@@ -66,4 +66,9 @@ describe(FilterPanel, () => {
       expect(screen.getByText(rating)).toBeInTheDocument()
     })
   })
+
+  it('renders a submit button', () => {
+    render(<FilterPanel />)
+    expect(screen.getByText('Submit')).toBeInTheDocument()
+  })
 })
