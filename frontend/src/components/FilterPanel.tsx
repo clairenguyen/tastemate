@@ -23,7 +23,7 @@ const FILTERS = [
 
 export default function FilterPanel() {
   return (
-    <div className="px-2 bg-white text-black">
+    <div className="w-1/5 px-2 bg-white text-black">
       <h1 className="mb-4 text-4xl font-bold">Your Preferences</h1>
       {FILTERS.map((filter, idx) => (
         <FilterCategory

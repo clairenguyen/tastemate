@@ -24,7 +24,7 @@ export default function CardScreen() {
   return (
     <div
       data-testid="card-screen"
-      className="flex flex-col items-center justify-center position-relative float-right w-3/4 h-screen bg-slate-200 d-inline-block text-black"
+      className="flex flex-col items-center justify-center position-relative float-right w-3/5 h-screen bg-slate-200 d-inline-block text-black"
     >
       <button onClick={toggleFilterCard}>Filter</button>
       {isFilterCardOpen && 'Filters'}
