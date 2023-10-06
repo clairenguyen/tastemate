@@ -23,7 +23,7 @@ const FILTERS = [
 
 export default function FilterPanel() {
   return (
-    <div className="bg-white text-black">
+    <div className="px-2 bg-white text-black">
       <h1 className="mb-4 text-4xl font-bold">Your Preferences</h1>
       {FILTERS.map((filter, idx) => (
         <FilterCategory
@@ -34,11 +34,11 @@ export default function FilterPanel() {
       ))}
       <button
         type="submit"
-        className="bg-blue-600 text-white rounded-full p-2 w-full"
+        className="mt-2 p-2 bg-blue-600 text-white rounded-full w-full"
       >
         Submit
       </button>
-      <button className="text-blue-600 text-center w-full">Reset</button>
+      <button className="p-2 text-blue-600 text-center w-full">Reset</button>
     </div>
   )
 }
