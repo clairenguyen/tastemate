@@ -1,0 +1,33 @@
+name: Slack Notification for In Progress
+
+on:
+  project_card:
+    types:
+      - moved
+
+jobs:
+  send_slack_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack if moved to In Progress
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          SENDER=${{ github.event.sender.login }}
+          ISSUE_DETAILS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "${{ github.event.project_card.content_url }}")
+          ISSUE_TITLE=$(echo "$ISSUE_DETAILS_JSON" | jq .title | tr -d '"')
+          ISSUE_URL=$(echo "$ISSUE_DETAILS_JSON" | jq .html_url | tr -d '"')
+          COLUMN_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/projects/columns/${{ github.event.project_card.column_id }}")
+          COLUMN_NAME=$(echo "$COLUMN_JSON" | jq .name | tr -d '"')
+          MESSAGE="Issue: '$ISSUE_TITLE' by $SENDER has been moved to $COLUMN_NAME."
+          
+          if [[ "$COLUMN_NAME" == "🏗 In progress" ]]; then
+            curl -X POST -H 'Content-type: application/json' \
+            --data "{
+              \"columnName\": \"$COLUMN_NAME\",
+              \"issueTitle\": \"$ISSUE_TITLE\",
+              \"issueUrl\": \"$ISSUE_URL\",
+              \"message\": \"$MESSAGE\",
+              \"sender\": \"$SENDER\"
+            }" $SLACK_WEBHOOK_URL
+          fi
