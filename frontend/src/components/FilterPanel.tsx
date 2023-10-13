@@ -3,7 +3,9 @@ import FilterCategory from './FilterCategory'
 
 const FILTERS = [
   {
-    category: 'Dietary Restrictions', options: ['Vegan', 'Vegetarian', 'Gluten Free', 'Kosher']},
+    category: 'Dietary Restrictions',
+    options: ['Vegan', 'Vegetarian', 'Gluten Free', 'Kosher'],
+  },
   {
     category: 'Cuisines',
     options: [
@@ -18,8 +20,8 @@ const FILTERS = [
       'Sushi',
     ],
   },
-  {category: 'Budget', options: ['$', '$$', '$$$', '$$$$']},
-  {category: 'Ratings', options: ['2+', '3+', '4+', '5+']},
+  { category: 'Budget', options: ['$', '$$', '$$$', '$$$$'] },
+  { category: 'Ratings', options: ['2+', '3+', '4+', '5+'] },
 ]
 
 export default function FilterPanel() {
