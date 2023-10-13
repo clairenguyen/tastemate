@@ -2,10 +2,11 @@ import FilterButton from './FilterButton'
 import FilterCategory from './FilterCategory'
 
 const FILTERS = [
-  ['Dietary Restrictions', ['Vegan', 'Vegetarian', 'Gluten Free', 'Kosher']],
-  [
-    'Cuisines',
-    [
+  {
+    category: 'Dietary Restrictions', options: ['Vegan', 'Vegetarian', 'Gluten Free', 'Kosher']},
+  {
+    category: 'Cuisines',
+    options: [
       'American',
       'Italian',
       'Fast Food',
@@ -16,9 +17,9 @@ const FILTERS = [
       'Mediterranean',
       'Sushi',
     ],
-  ],
-  ['Budget', ['$', '$$', '$$$', '$$$$']],
-  ['Ratings', ['2+', '3+', '4+', '5+']],
+  },
+  {category: 'Budget', options: ['$', '$$', '$$$', '$$$$']},
+  {category: 'Ratings', options: ['2+', '3+', '4+', '5+']},
 ]
 
 export default function FilterPanel() {
@@ -28,8 +29,8 @@ export default function FilterPanel() {
       {FILTERS.map((filter, idx) => (
         <FilterCategory
           key={idx}
-          title={filter[0] as string}
-          options={filter[1] as string[]}
+          title={filter.category}
+          options={filter.options}
         />
       ))}
       <button
