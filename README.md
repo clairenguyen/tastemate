@@ -14,7 +14,7 @@ This is a project for 8th Light devs to practice React, learn new tools, and hav
 
 ## Versions
 - Elixir 1.14.4
-- Erlang 25.3.1
+- Erlang 26.1.1
 - Node 20.4.0
 
 ## asdf
