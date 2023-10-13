@@ -8,7 +8,7 @@ describe(FilterPanel, () => {
     expect(screen.getByText('Your Preferences')).toBeVisible()
   })
 
-  it('renders a FilterCategory for each Dietary Restrictions filter', () => {
+  it('displays a filter category for each Dietary Restrictions filter', () => {
     const DIETARY_RESTRICTIONS = [
       'Vegan',
       'Vegetarian',
@@ -24,7 +24,7 @@ describe(FilterPanel, () => {
     })
   })
 
-  it('renders a FilterCategory for each Cuisines filter', () => {
+  it('displays a filter category for each Cuisines filter', () => {
     const CUISINES = [
       'American',
       'Italian',
@@ -45,7 +45,7 @@ describe(FilterPanel, () => {
     })
   })
 
-  it('renders a FilterCategory for each Budget filter', () => {
+  it('displays a filter category for each Budget filter', () => {
     const BUDGET = ['$', '$$', '$$$', '$$$$']
 
     render(<FilterPanel />)
@@ -56,7 +56,7 @@ describe(FilterPanel, () => {
     })
   })
 
-  it('renders a FilterCategory for each Ratings filter', () => {
+  it('displays a filter category for each Ratings filter', () => {
     const RATINGS = ['2+', '3+', '4+', '5+']
 
     render(<FilterPanel />)
@@ -67,12 +67,12 @@ describe(FilterPanel, () => {
     })
   })
 
-  it('renders a submit button', () => {
+  it('displays a submit button', () => {
     render(<FilterPanel />)
     expect(screen.getByText('Submit')).toBeVisible()
   })
 
-  it('renders a reset button', () => {
+  it('displays a reset button', () => {
     render(<FilterPanel />)
     expect(screen.getByText('Reset')).toBeVisible()
   })
