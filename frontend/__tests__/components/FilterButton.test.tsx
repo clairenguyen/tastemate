@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 
 describe(FilterButton, () => {
   it('displays a filter button with the expected label', () => {
-    render(<FilterButton filterLabel="Test Label" />)
+    render(<FilterButton label="Test Label" />)
 
     expect(screen.getByRole('button')).toHaveTextContent('Test Label')
   })

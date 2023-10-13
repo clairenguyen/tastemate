@@ -12,7 +12,7 @@ export default function FilterCategory({
       <h2 className="text-2xl font-bold">{title}</h2>
       <div className="flex flex-row flex-wrap">
         {options.map((restriction) => (
-          <FilterButton key={restriction} filterLabel={restriction} />
+          <FilterButton key={restriction} label={restriction} />
         ))}
       </div>
     </div>
