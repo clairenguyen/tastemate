@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 describe(FilterPanel, () => {
   it('renders a preferences header', () => {
     render(<FilterPanel />)
-    expect(screen.getByText('Your Preferences')).toBeInTheDocument()
+    expect(screen.getByText('Your Preferences')).toBeVisible()
   })
 
   it('renders a FilterCategory for each Dietary Restrictions filter', () => {
@@ -18,9 +18,9 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
-    expect(screen.getByText('Dietary Restrictions')).toBeInTheDocument()
+    expect(screen.getByText('Dietary Restrictions')).toBeVisible()
     DIETARY_RESTRICTIONS.forEach((restriction) => {
-      expect(screen.getByText(restriction)).toBeInTheDocument()
+      expect(screen.getByText(restriction)).toBeVisible()
     })
   })
 
@@ -39,9 +39,9 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
-    expect(screen.getByText('Cuisines')).toBeInTheDocument()
+    expect(screen.getByText('Cuisines')).toBeVisible()
     CUISINES.forEach((cuisine) => {
-      expect(screen.getByText(cuisine)).toBeInTheDocument()
+      expect(screen.getByText(cuisine)).toBeVisible()
     })
   })
 
@@ -50,9 +50,9 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
-    expect(screen.getByText('Budget')).toBeInTheDocument()
+    expect(screen.getByText('Budget')).toBeVisible()
     BUDGET.forEach((budget) => {
-      expect(screen.getByText(budget)).toBeInTheDocument()
+      expect(screen.getByText(budget)).toBeVisible()
     })
   })
 
@@ -61,19 +61,19 @@ describe(FilterPanel, () => {
 
     render(<FilterPanel />)
 
-    expect(screen.getByText('Ratings')).toBeInTheDocument()
+    expect(screen.getByText('Ratings')).toBeVisible()
     RATINGS.forEach((rating) => {
-      expect(screen.getByText(rating)).toBeInTheDocument()
+      expect(screen.getByText(rating)).toBeVisible()
     })
   })
 
   it('renders a submit button', () => {
     render(<FilterPanel />)
-    expect(screen.getByText('Submit')).toBeInTheDocument()
+    expect(screen.getByText('Submit')).toBeVisible()
   })
 
   it('renders a reset button', () => {
     render(<FilterPanel />)
-    expect(screen.getByText('Reset')).toBeInTheDocument()
+    expect(screen.getByText('Reset')).toBeVisible()
   })
 })

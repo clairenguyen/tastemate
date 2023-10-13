@@ -9,9 +9,9 @@ describe(FilterCategory, () => {
 
     render(<FilterCategory title="Test Category" options={OPTIONS} />)
 
-    expect(screen.getByText('Test Category')).toBeInTheDocument()
+    expect(screen.getByText('Test Category')).toBeVisible()
     OPTIONS.forEach((option) => {
-      expect(screen.getByText(option)).toBeInTheDocument()
+      expect(screen.getByText(option)).toBeVisible()
     })
   })
 })
