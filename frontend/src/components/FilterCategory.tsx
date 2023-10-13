@@ -1,12 +1,14 @@
 import FilterButton from './FilterButton'
 
+interface FilterCategoryProps {
+  title: string
+  options: string[]
+}
+
 export default function FilterCategory({
   title,
   options,
-}: {
-  title: string
-  options: string[]
-}) {
+}: FilterCategoryProps) {
   return (
     <div className="mb-2 flex flex-col">
       <h2 className="text-2xl font-bold">{title}</h2>

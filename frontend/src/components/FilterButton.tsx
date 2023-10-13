@@ -1,4 +1,8 @@
-export default function FilterButton({ label }: { label: string }) {
+interface FilterButtonProps {
+  label: string
+}
+
+export default function FilterButton({ label }: FilterButtonProps) {
   return (
     <>
       <button
