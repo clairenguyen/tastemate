@@ -6,7 +6,7 @@ interface CardCarouselProps {
   restaurants: Restaurant[]
 }
 
-export default function CardCarousel({ restaurants = [] }: CardCarouselProps) {
+export default function CardCarousel({ restaurants = [], addLikedRestaurant }: CardCarouselProps) {
   const [dummyStatus, setDummyStatus] = useState<string>('none')
 
   const handleButtonClick = (buttonType: string) => {
@@ -24,7 +24,7 @@ export default function CardCarousel({ restaurants = [] }: CardCarouselProps) {
       </h1>
       <RestaurantCard
         restaurant={restaurants[0]}
-        onAcceptButtonClick={() => handleButtonClick('accept')}
+        onAcceptButtonClick={() => addLikedRestaurant(restaurants[0])}
         onDeclineButtonClick={() => handleButtonClick('decline')}
       />
     </div>

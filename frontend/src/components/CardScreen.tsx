@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import type { Restaurant } from '@/types'
 import CardCarousel from '@/components/CardCarousel'
 
-export default function CardScreen() {
+export default function CardScreen({addLikedRestaurant}) {
   const [error, setError] = useState()
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
   const [isFilterCardOpen, setIsFilterCardOpen] = useState(false);
@@ -29,8 +29,7 @@ export default function CardScreen() {
       <button onClick={toggleFilterCard}>Filter</button>
       {isFilterCardOpen && 'Filters'}
 
-      <CardCarousel restaurants={restaurants} />
-
+      <CardCarousel restaurants={restaurants} addLikedRestaurant={addLikedRestaurant} />
     </div>
   )
 }
