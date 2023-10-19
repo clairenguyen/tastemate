@@ -1,7 +1,7 @@
 import FilterButton from './FilterButton'
 import FilterCategory from './FilterCategory'
 
-const FILTERS = [
+const filters = [
   {
     category: 'Dietary Restrictions',
     options: ['Vegan', 'Vegetarian', 'Gluten Free', 'Kosher'],
@@ -28,7 +28,7 @@ export default function FilterPanel() {
   return (
     <div className="w-1/5 px-2 bg-white text-black">
       <h1 className="mb-4 text-4xl font-bold">Your Preferences</h1>
-      {FILTERS.map((filter, idx) => (
+      {filters.map((filter, idx) => (
         <FilterCategory
           key={idx}
           title={filter.category}

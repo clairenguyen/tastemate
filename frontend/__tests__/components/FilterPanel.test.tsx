@@ -9,7 +9,7 @@ describe(FilterPanel, () => {
   })
 
   it('displays a filter category for each Dietary Restrictions filter', () => {
-    const DIETARY_RESTRICTIONS = [
+    const dietary_restrictions = [
       'Vegan',
       'Vegetarian',
       'Gluten Free',
@@ -19,13 +19,13 @@ describe(FilterPanel, () => {
     render(<FilterPanel />)
 
     expect(screen.getByText('Dietary Restrictions')).toBeVisible()
-    DIETARY_RESTRICTIONS.forEach((restriction) => {
+    dietary_restrictions.forEach((restriction) => {
       expect(screen.getByText(restriction)).toBeVisible()
     })
   })
 
   it('displays a filter category for each Cuisines filter', () => {
-    const CUISINES = [
+    const cuisines = [
       'American',
       'Italian',
       'Fast Food',
@@ -40,29 +40,29 @@ describe(FilterPanel, () => {
     render(<FilterPanel />)
 
     expect(screen.getByText('Cuisines')).toBeVisible()
-    CUISINES.forEach((cuisine) => {
+    cuisines.forEach((cuisine) => {
       expect(screen.getByText(cuisine)).toBeVisible()
     })
   })
 
   it('displays a filter category for each Budget filter', () => {
-    const BUDGET = ['$', '$$', '$$$', '$$$$']
+    const budget = ['$', '$$', '$$$', '$$$$']
 
     render(<FilterPanel />)
 
     expect(screen.getByText('Budget')).toBeVisible()
-    BUDGET.forEach((budget) => {
+    budget.forEach((budget) => {
       expect(screen.getByText(budget)).toBeVisible()
     })
   })
 
   it('displays a filter category for each Ratings filter', () => {
-    const RATINGS = ['2+', '3+', '4+', '5+']
+    const ratings = ['2+', '3+', '4+', '5+']
 
     render(<FilterPanel />)
 
     expect(screen.getByText('Ratings')).toBeVisible()
-    RATINGS.forEach((rating) => {
+    ratings.forEach((rating) => {
       expect(screen.getByText(rating)).toBeVisible()
     })
   })
