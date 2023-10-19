@@ -35,10 +35,7 @@ export default function FilterPanel() {
           options={filter.options}
         />
       ))}
-      <button
-        type="submit"
-        className="mt-2 p-2 bg-blue-600 text-white rounded-full w-full"
-      >
+      <button className="mt-2 p-2 bg-blue-600 text-white rounded-full w-full">
         Submit
       </button>
       <button className="p-2 text-blue-600 text-center w-full">Reset</button>
