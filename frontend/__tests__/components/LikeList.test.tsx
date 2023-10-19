@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import LikeList from '@/components/LikeList'
 
-const FAKE_RESTAURANT_ONE = {
+const fakeRestaurantOne = {
   name: 'Fake Restaurant 1',
   address: '123 Fake St.',
   cuisine: 'Fakish',
@@ -11,7 +11,7 @@ const FAKE_RESTAURANT_ONE = {
   website_url: 'http://www.dummyrestaurant.com',
 }
 
-const FAKE_RESTAURANT_TWO = {
+const fakeRestaurantTwo = {
   name: 'Fake Restaurant 2',
   address: '123 Fake St.',
   cuisine: 'Asian',
@@ -21,7 +21,7 @@ const FAKE_RESTAURANT_TWO = {
   website_url: 'http://www.dummyrestaurant.com',
 }
 
-const FAKE_RESTAURANT_THREE = {
+const fakeRestaurantThree = {
   name: 'Fake Restaurant 3',
   address: '123 Fake St.',
   cuisine: 'American',
@@ -31,14 +31,18 @@ const FAKE_RESTAURANT_THREE = {
   website_url: 'http://www.dummyrestaurant.com',
 }
 
-const LIKED_RESTAURANTS = [FAKE_RESTAURANT_ONE, FAKE_RESTAURANT_TWO, FAKE_RESTAURANT_THREE]
+const likedRestaurants = [
+  fakeRestaurantOne,
+  fakeRestaurantTwo,
+  fakeRestaurantThree,
+]
 
 describe('LikeList', () => {
-  it('renders the TasteMate h1', () => {
+  it('renders the TasteMate header', () => {
     render(<LikeList likedRestaurants={[]} />)
-    const myElem = screen.getByText('TasteMate')
+    const header = screen.getByText('TasteMate')
 
-    expect(myElem).toBeInTheDocument()
+    expect(header).toBeVisible()
   })
 
   it('renders headers for "Like" lists ', () => {
@@ -46,16 +50,16 @@ describe('LikeList', () => {
     const restaurantsHeader = screen.getByText('Restaurants')
     const peopleHeader = screen.getByText('People')
 
-    expect(restaurantsHeader).toBeInTheDocument()
-    expect(peopleHeader).toBeInTheDocument()
+    expect(restaurantsHeader).toBeVisible()
+    expect(peopleHeader).toBeVisible()
   })
 
   it('renders a list of liked restaurants', () => {
-    render(<LikeList likedRestaurants={LIKED_RESTAURANTS} />)
+    render(<LikeList likedRestaurants={likedRestaurants} />)
     const listedRestaurant = screen.getByText('Fake Restaurant 1')
 
-    expect(listedRestaurant).toBeInTheDocument()
+    expect(listedRestaurant).toBeVisible()
 
-    expect(screen.getAllByRole("listitem").length).toEqual(3)
+    expect(screen.getAllByRole('listitem').length).toEqual(3)
   })
 })

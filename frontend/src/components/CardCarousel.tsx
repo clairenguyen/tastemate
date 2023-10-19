@@ -4,9 +4,13 @@ import { Restaurant } from '@/types'
 
 interface CardCarouselProps {
   restaurants: Restaurant[]
+  addLikedRestaurant(): any
 }
 
-export default function CardCarousel({ restaurants = [], addLikedRestaurant }: CardCarouselProps) {
+export default function CardCarousel({
+  restaurants = [],
+  addLikedRestaurant,
+}: CardCarouselProps) {
   const [dummyStatus, setDummyStatus] = useState<string>('none')
 
   const handleButtonClick = (buttonType: string) => {

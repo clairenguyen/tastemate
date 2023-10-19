@@ -29,13 +29,12 @@ describe('CardScreen', () => {
   })
 
   test('displays the first restuarant from fetched restaurants', async () => {
-    const likedRestaurant = jest.fn()
     window.fetch = jest.fn().mockResolvedValue({
       json: () => Promise.resolve({ data: restaurants }),
     })
 
     await act(() => {
-      render(<CardScreen addLikedRestaurant={likedRestaurant} />)
+      render(<CardScreen addLikedRestaurant={jest.fn()} />)
     })
 
     expect(screen.getByText(/dummy restaurant/i)).toBeVisible()
@@ -43,13 +42,12 @@ describe('CardScreen', () => {
   })
 
   test('displays an error if fetch fails', async () => {
-    const likedRestaurant = jest.fn()
     window.fetch = jest
       .fn()
       .mockRejectedValue({ message: 'failed to fetch restaurants' })
 
     await act(() => {
-      render(<CardScreen addLikedRestaurant={likedRestaurant} />)
+      render(<CardScreen addLikedRestaurant={jest.fn()} />)
     })
 
     expect(screen.getByText(/failed to fetch/i)).toBeVisible()
@@ -65,7 +63,7 @@ describe('CardScreen', () => {
     })
 
     expect(screen.queryByText('Filters')).not.toBeInTheDocument()
-    
+
     await userEvent.click(screen.getByRole('button', { name: 'Filter' }))
     expect(screen.getByText('Filters')).toBeInTheDocument()
   })

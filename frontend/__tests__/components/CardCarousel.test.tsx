@@ -46,13 +46,18 @@ describe('CardCarousel', () => {
     ).toBeVisible()
   })
 
-  test('clicking on accept button calls the liked function', async () => {
-    const likeRestaurant = jest.fn()
+  test('clicking on accept button calls the addLikedRestaurant function', async () => {
+    const addLikedRestaurantMock = jest.fn()
 
-    render(<CardCarousel restaurants={[FAKE_RESTAURANT]} addLikedRestaurant={likeRestaurant} />)
+    render(
+      <CardCarousel
+        restaurants={[FAKE_RESTAURANT]}
+        addLikedRestaurant={addLikedRestaurantMock}
+      />,
+    )
 
     await userEvent.click(screen.getByRole('button', { name: 'Accept' }))
 
-    expect(likeRestaurant).toHaveBeenCalledWith(FAKE_RESTAURANT)
+    expect(addLikedRestaurantMock).toHaveBeenCalledWith(FAKE_RESTAURANT)
   })
 })

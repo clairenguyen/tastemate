@@ -3,14 +3,18 @@ import { useEffect, useState } from 'react'
 import type { Restaurant } from '@/types'
 import CardCarousel from '@/components/CardCarousel'
 
-export default function CardScreen({addLikedRestaurant}) {
+interface CardScreenProps {
+  addLikedRestaurant(): any,
+}
+
+export default function CardScreen({ addLikedRestaurant }: CardScreenProps) {
   const [error, setError] = useState()
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
-  const [isFilterCardOpen, setIsFilterCardOpen] = useState(false);
+  const [isFilterCardOpen, setIsFilterCardOpen] = useState(false)
 
   const toggleFilterCard = () => {
-    setIsFilterCardOpen(!isFilterCardOpen);
-  };
+    setIsFilterCardOpen(!isFilterCardOpen)
+  }
 
   useEffect(() => {
     fetch('http://localhost:4000/api/restaurants/all')
@@ -29,7 +33,10 @@ export default function CardScreen({addLikedRestaurant}) {
       <button onClick={toggleFilterCard}>Filter</button>
       {isFilterCardOpen && 'Filters'}
 
-      <CardCarousel restaurants={restaurants} addLikedRestaurant={addLikedRestaurant} />
+      <CardCarousel
+        restaurants={restaurants}
+        addLikedRestaurant={addLikedRestaurant}
+      />
     </div>
   )
 }

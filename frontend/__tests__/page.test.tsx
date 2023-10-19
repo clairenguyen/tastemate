@@ -1,6 +1,6 @@
-import {act, render, screen} from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import Home from '@/app/page'
-import userEvent from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 describe('Home', () => {
   const restaurants = [
@@ -48,7 +48,7 @@ describe('Home', () => {
     expect(screen.getByTestId('card-screen')).toBeVisible()
   })
 
-  describe('when accept button is clicked',  () => {
+  describe('when accept button is clicked', () => {
     it('the restaurant is saved to the like list', async () => {
       await userEvent.click(screen.getByRole('button', { name: 'Accept' }))
 

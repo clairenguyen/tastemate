@@ -1,8 +1,8 @@
-"use client"
-import { Restaurant } from "@/types";
+'use client'
+import { Restaurant } from '@/types'
 
 interface LikeListProps {
-    likedRestaurants: Restaurant[]
+  likedRestaurants: Restaurant[]
 }
 
 export default function LikeList({ likedRestaurants = [] }: LikeListProps) {
@@ -10,7 +10,6 @@ export default function LikeList({ likedRestaurants = [] }: LikeListProps) {
     <div
       data-testid="match-list"
       className="float-left font-sans w-1/4 h-screen bg-white d-inline-block"
-
     >
       <div className="flex items-center h-20 bg-blue-600">
         <div className="p-5">
@@ -26,11 +25,13 @@ export default function LikeList({ likedRestaurants = [] }: LikeListProps) {
             <b>People</b>
           </a>
         </div>
-          <div>
-              <ul>
-                  {likedRestaurants.map(restaurant => (<li>{restaurant.name}</li>))}
-              </ul>
-          </div>
+        <div>
+          <ul>
+            {likedRestaurants.map((restaurant) => (
+              <li>{restaurant.name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   )
