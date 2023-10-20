@@ -20,7 +20,7 @@ jobs:
           COLUMN_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/projects/columns/${{ github.event.project_card.column_id }}")
           COLUMN_NAME=$(echo "$COLUMN_JSON" | jq .name | tr -d '"')
           MESSAGE="Issue: '$ISSUE_TITLE' by $SENDER has been moved to $COLUMN_NAME."
-          
+
           if [[ "$COLUMN_NAME" == "🏗 In progress" ]]; then
             curl -X POST -H 'Content-type: application/json' \
             --data "{

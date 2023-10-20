@@ -34,21 +34,30 @@ describe('CardCarousel', () => {
     expect(screen.queryAllByRole('img')).toHaveLength(1)
   })
 
-  test('clicking on card buttons sets placeholder status', async () => {
+  test('clicking on decline button sets placeholder status', async () => {
     render(<CardCarousel restaurants={[FAKE_RESTAURANT]} />)
 
     expect(screen.getByText('Button status: none')).toBeVisible()
-
-    await userEvent.click(screen.getByRole('button', { name: 'Accept' }))
-
-    expect(
-      screen.getByText('Button status: accept button clicked'),
-    ).toBeVisible()
 
     await userEvent.click(screen.getByRole('button', { name: 'Decline' }))
 
     expect(
       screen.getByText('Button status: decline button clicked'),
     ).toBeVisible()
+  })
+
+  test('clicking on accept button calls the addLikedRestaurant function', async () => {
+    const addLikedRestaurantMock = jest.fn()
+
+    render(
+      <CardCarousel
+        restaurants={[FAKE_RESTAURANT]}
+        addLikedRestaurant={addLikedRestaurantMock}
+      />,
+    )
+
+    await userEvent.click(screen.getByRole('button', { name: 'Accept' }))
+
+    expect(addLikedRestaurantMock).toHaveBeenCalledWith(FAKE_RESTAURANT)
   })
 })

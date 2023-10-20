@@ -1,10 +1,11 @@
 # TasteMate
 
-An app where users can swipe on restaurant options to help decide on where to eat. 
+An app where users can swipe on restaurant options to help decide on where to eat.
 
-This is a project for 8th Light devs to practice React, learn new tools, and have fun. 
+This is a project for 8th Light devs to practice React, learn new tools, and have fun.
 
 ## Tech Stack
+
 - React
 - Typescript
 - Next.js
@@ -13,11 +14,13 @@ This is a project for 8th Light devs to practice React, learn new tools, and hav
 - Elixir
 
 ## Versions
+
 - Elixir 1.14.4
 - Erlang 26.1.1
 - Node 20.4.0
 
 ## asdf
+
 `asdf` is a multiple runtime version manager
 
 Follow the installation guide. Once you have installed `asdf`, install the required plugins:
@@ -58,5 +61,5 @@ npm run frontend:start
 npm run backend:start
 
 npm run backend:test
-npm run frontend:test 
+npm run frontend:test
 ```
