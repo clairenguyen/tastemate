@@ -6,6 +6,7 @@ interface ICard {
   restaurant: Restaurant
 }
 
+// it's a card
 export default function Card({
   onAcceptButtonClick,
   onDeclineButtonClick,
